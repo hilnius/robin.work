@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { trigger, state, animate, group, query, stagger, keyframes, transition, style } from '@angular/animations';
+
+declare let gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -20,9 +22,14 @@ import { trigger, state, animate, group, query, stagger, keyframes, transition, 
   ]
 })
 export class AppComponent {
-  
-  constructor(public router: Router) {
 
+  constructor(public router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        gtag('set', { 'page_path': event.urlAfterRedirects });
+        gtag('event', 'page_view');
+      }
+    });
   }
 
 }
