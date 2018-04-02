@@ -1,0 +1,149 @@
+@import "../styles";
+@import "../../node_modules/compass-mixins/lib/compass";
+
+#avatar {
+  background-image: url("../assets/images/avatar.jpg");
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  border-radius: 200px;
+  box-shadow: 0px 1px 3px 2px $blackShadow inset;
+  display: inline-block;
+  float: left;
+  margin-right: 4em;
+  transition: all 0.5s ease;
+
+  @include respond-to(phone) {  
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+  }
+  @include respond-to(tablet) {
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+  }
+}
+
+a.hidden-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover, &:active, &:focus {
+    color: inherit;
+    text-decoration: none;
+  }  
+}
+
+header {
+  background: #438c59;
+  height: 400px;
+  // margin-bottom: - $height / 2;
+  box-shadow: 0px 3px 3px $blackShadow;
+  padding: 3em 3em;
+  transition: height 0.5s ease, margin-bottom 0.5s ease;
+
+  @include respond-to(phone) {  
+    height: 350px;
+  }
+  @include respond-to(tablet) {  
+    height: 350px;
+  }
+
+  .header-content {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .presentation {
+    padding-top: 2em;
+    @include respond-to(phone) {  
+      padding-top: 0;
+    }
+    @include respond-to(tablet) {
+      padding-top: 0;
+    }
+  }
+
+  .title {
+    color: white;
+    font-weight: 700;
+    line-height: 2em;
+    font-size: $phi + em;
+    transition: all 0.5s ease;
+  }
+  .subtitle {
+    color: hsl(138, 35%, 95%);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 2em;
+    transition: opacity 0.5s ease;
+    @include respond-to(phone) {  
+      display: block; 
+      clear: both;
+      font-size: 12px;
+      padding-top: 1em;
+    }
+    @include respond-to(tablet) {
+      display: block; 
+      clear: both;
+      font-size: 12px;
+      padding-top: 1em;
+    }
+  }
+
+  &.small {
+    height: 100px;
+    padding: 1.5em 2em;
+    margin-bottom: 0px;
+    #avatar {
+      width: 50px;
+      height: 50px;
+    }
+    .presentation {
+      padding-top: 3px;
+    }
+    .subtitle {
+      font-size: 12px;
+      opacity: 0;
+    }
+  }
+}
+
+nav {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  a {
+    color: $defaultText;
+    text-decoration: none;
+    margin: 1em;
+    font-size: 18px;
+    background: $white;
+    box-shadow: 0px 2px 4px 0px $blackShadow;
+    border-radius: 30px;
+    padding-top: 9px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    top: 0px;
+    transition: box-shadow 0.1s, top 0.1s;
+
+    &:hover {
+      top: -1px;
+      box-shadow: 0px 6px 9px 0px $blackShadow;
+    }
+  }
+
+}

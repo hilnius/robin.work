@@ -1,0 +1,108 @@
+@import "../../styles";
+@import "../../../node_modules/compass-mixins/lib/compass";
+
+$height: 250px;
+$linkWidth: $height * $phi * 4/3;
+
+nav {
+  text-align: center;
+  position: relative;
+  top: - $height / 2;
+  margin-bottom: - $height / 2;
+}
+
+a.nav-link {
+  $innerLinkWidth: floor($height * $phi / 2);
+
+  display: inline-block;
+  width: $linkWidth;
+  position: relative;
+  height: 250px;
+  background: $height;
+  box-shadow: 0px 4px 12px 3px $lightBlackShadow;
+  border-radius: 2px;
+  margin: 0px 1 / 4 * $height;
+  background-position: ($innerLinkWidth - 50px) 0px;
+  text-decoration: none;
+  overflow: hidden;
+  margin-top: 0px;
+  vertical-align: top;
+  margin-bottom: 4em;
+  transition: box-shadow 0.1s ease-in-out, margin-top 0.1s ease-in-out, margin-bottom 0.1s ease-in-out;
+
+  @include respond-to(phone) { 
+    display: block;
+    width: auto;
+    background-position: 0px 0px;
+    margin: 0px 2em;
+    margin-bottom: 4em;
+  }
+  @include respond-to(tablet) { 
+    display: block;
+    width: auto;
+    background-position: 0px 0px;
+    margin: 0px 2em;
+    margin-bottom: 4em;
+  }
+
+  // @keyframes come-in {
+  //   0%   { left: -100%; }
+  //   100% { left: 0px; }
+  // }
+
+  // animation: come-in 1s ease;
+
+  &#blog-link {
+    background-image: url("../../assets/images/code.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &#projects-link {
+    background-image: url("../../assets/images/projects.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  span.category-name {
+    width: $innerLinkWidth;
+    height: 100%;
+    display: block;
+    background: $white;
+    padding: 2em;
+    text-align: left;
+    box-shadow: 2px 0px 2px 0px $blackShadow;
+
+    @include respond-to(phone) { 
+      width: 100%;
+      height: auto;
+      padding: 1.5em;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+    @include respond-to(tablet) { 
+      width: 100%;
+      height: auto;
+      padding: 1.5em;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+
+    .link-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: $phi + em;
+      display: inline-block;
+    }
+    p {
+      color: $defaultText;
+      font-size: 14px;
+      line-height: $phi + em;
+    }
+  }
+  &:hover {
+    box-shadow: 0px 6px 13px 4px $lightBlackShadow;
+    margin-top: -3px;
+    margin-bottom: calc(4em + 3px);
+  }
+}

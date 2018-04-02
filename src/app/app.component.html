@@ -1,0 +1,27 @@
+<header [ngClass]="{ small: router.url != '/' }">
+  <div class="header-content">
+    <a routerLink="/" id="avatar"></a>
+    <div class="presentation">
+      <span class="title">Robin Nicollet</span>
+      <br>
+      <span class="subtitle">
+        Passionate about <a target="_blank" href="https://en.wikipedia.org/wiki/Design_Patterns" class="hidden-link">code</a>, my main other interests being <a target="_blank" href="https://en.wikipedia.org/wiki/Handicraft" class="hidden-link">craftsmanship</a>,<br> <a target="_blank" href="https://en.wikipedia.org/wiki/Dassault_Rafale" class="hidden-link">planes</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/Ethics_(Spinoza)" class="hidden-link">philosophy</a>, <a target="_blank" href="https://www.youtube.com/watch?v=BDFafqskt7k" class="hidden-link">badminton</a>, and <a target="_blank" href="https://clips.twitch.tv/ResourcefulRespectfulRhinocerosBigBrother" class="hidden-link">Fortnite</a>.
+      </span>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer @footerAnim>
+  <a target="_blank" href="https://twitter.com/hilnius"><i class="fa fa-twitter"></i></a>
+  <a target="_blank" href="https://github.com/hilnius"><i class="fa fa-github"></i></a>
+  <a target="_blank" href="https://www.linkedin.com/in/robinnicollet"><i class="fa fa-linkedin"></i></a>
+  <a target="_blank" href="skype:hilnius?chat"><i class="fa fa-skype"></i></a>
+  <a target="_blank" href="http://stackoverflow.com/users/2734202/hilnius"><i class="fa fa-stack-overflow"></i></a>
+  <a href="mailto:robin.nicollet@gmail.com"><i class="fa fa-at"></i></a>
+</footer>
+
+<div style="text-align: center; font-size: 10px; padding-top: 1em; padding-bottom: 1em">
+<small>© robin.work, 2018</small>
+</div>

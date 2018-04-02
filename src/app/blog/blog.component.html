@@ -1,0 +1,17 @@
+
+<nav>
+  <a routerLink="/blog/1" routerLinkActive #rla1="routerLinkActive" >
+    <div class="dot" @flyAnimation *ngIf="rla1.isActive"></div>
+    Introduction
+  </a>
+  <a routerLink="/blog/2" routerLinkActive #rla2="routerLinkActive" >
+    <div class="dot" @flyAnimation *ngIf="rla2.isActive"></div>
+    AWS to AppEngine
+  </a>
+  <a routerLink="/blog/3" routerLinkActive #rla3="routerLinkActive">
+    <div class="dot" @flyAnimation *ngIf="rla3.isActive"></div>
+    ngRights
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
