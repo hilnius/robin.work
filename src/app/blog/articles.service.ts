@@ -17,6 +17,6 @@ export class ArticlesService {
 
   // Uses http.get() to load data from a single API endpoint
   getArticle(id: number) : Observable<Article> {
-    return this.http.get<Article>('/blog/' + id);
+    return this.http.get<Article>('/api/blog/' + id);
   }
 }
